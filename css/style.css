@@ -1477,10 +1477,11 @@ banner
       object-position: left;
       animation: zoom 40s infinite ease-in-out; }
 .sb-banner .sb-main-title-frame {
-  padding-top: 7vh;
+  /* padding-top: 7vh; */
   display: flex;
   align-items: center;
-  height: 100vh; }
+  height: 80vh; 
+}
   .sb-banner .sb-main-title-frame .sb-main-title {
     width: 100%; }
 .sb-banner.sb-banner-sm .sb-main-title-frame {
