@@ -3850,4 +3850,11 @@ illustration 9
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.09);
   animation: anima1 3s 3s infinite ease-in-out; }
 
-/*# sourceMappingURL=style.css.map */
+
+  /* siddique */
+  @media (max-width: 768px) {
+    .sb-top-bar-frame .sb-top-bar .sb-logo-frame img {
+      width: 100%;
+      height: auto;
+    }
+  }
