@@ -3861,6 +3861,9 @@ illustration 9
       width: 100%;
       height: auto;
     }
+    .new-label{
+      display: none;
+    }
   }
 
   .new-label {
