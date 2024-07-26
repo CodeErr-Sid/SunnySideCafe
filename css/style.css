@@ -1092,6 +1092,7 @@ top bar
 ***************************/
 .sb-top-bar-frame {
   width: 100%;
+  height: 80px;
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -1115,7 +1116,7 @@ top bar
   .sb-top-bar-frame .sb-top-bar {
     padding: 0 15px;
     position: relative;
-    height: 120px;
+    /* height: 120px; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1128,7 +1129,7 @@ top bar
       width: 130px;
       transition: 0.3s ease-in-out; }
       .sb-top-bar-frame .sb-top-bar .sb-logo-frame img {
-        width: 100%;
+        width: 120%;
         /* height: 90%; */
        }
       .sb-top-bar-frame .sb-top-bar .sb-logo-frame:hover {
@@ -1143,11 +1144,13 @@ top bar
   .sb-top-bar-frame.sb-scroll {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); }
     .sb-top-bar-frame.sb-scroll .sb-top-bar {
-      height: 90px; }
+      /* height: 90px;  */
+    }
 
 @media (max-width: 992px) {
   .sb-top-bar-frame .sb-top-bar {
-    height: 90px; } }
+    /* height: 90px;  */
+  } }
 @media (max-width: 768px) {
   .sb-top-bar-frame .sb-top-bar {
     padding: 0 30px; } }
@@ -1359,7 +1362,7 @@ info bar
 ***************************/
 .sb-info-bar {
   border-top: solid 1px #F2F3F5;
-  top: 121px;
+  /* top: 121px; */
   right: 0;
   height: calc(100vh - 120px);
   width: 100%;
@@ -1375,7 +1378,7 @@ info bar
   .sb-info-bar.sb-active {
     transform: translateX(0); }
   .sb-info-bar.sb-scroll {
-    top: 91px;
+    top: 79px;
     height: calc(100vh - 91px); }
   .sb-info-bar .sb-infobar-content {
     position: relative;
