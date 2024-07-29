@@ -852,41 +852,9 @@
   <script src="js/plugins/fancybox.min.js"></script>
   <!-- starbelly js -->
   <script src="js/main.js"></script>
-  <!-- SMTP js -->
-   <!-- <script src="js/smtp.js"></script> -->
-
-   <!-- <script>
-    function sendEmail() {
-  var name = document.getElementById('name').value;
-  var phone = document.getElementById('phone').value;
-  var date = document.getElementById('date').value;
-  var person = document.getElementById('person').value;
-
-  var messageBody = "Name: " + name + "<br/> Phone: " + phone + "<br/> Time & Date: " + date + "<br/> No Of Person: " + person;
-
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "siddiqueofl@gmail.com",
-    Password: "DE774B1BE74137B688B44DFB518B6DF9A936",
-    To: 'siddiqueofl@gmail.com',
-    From: "siddiqueofl@gmail.com",
-    Subject: "SunnySideCafe | New Reservation",
-    Body: messageBody
-  }).then(
-    message => {
-      alert(message);
-      $('.sb-success-result').addClass('sb-active'); // Show success message
-    }
-  ).catch(
-    error => {
-      console.error('Email sending failed:', error);
-      alert('Failed to send email.');
-    }
-  );
-}
-   </script> -->
 
 
+<!-- Email Sending Logic for Reservation -->
    <script>
     async function sendEmail(event) {
       event.preventDefault();
@@ -921,5 +889,5 @@
 </body>
 
 
-<!-- Mirrored from miller.bslthemes.com/starbelly-demo/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 07:16:30 GMT -->
+
 </html>

@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
 
     const mailOptions = {
       from: 'siddiquetestemail@gmail.com',
-      to: 'siddiquetestemail@gmail.com',
+      to: 'primesiteinnovation@gmail.com',
       subject: 'SunnySideCafe | Reservation Request',
       text: `Name: ${name}\nPhone: ${phone}\nDate: ${date}\nNumber of persons: ${person}`,
     };
