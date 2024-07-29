@@ -1,13 +1,3 @@
-/* -------------------------------------------
-
-Name: 		Starbelly
-Version:  1.0
-Author:		Nazar Miller (millerDigitalDesign)
-Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
-
-p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
-
-------------------------------------------- */
 
 $(function() {
 
@@ -231,16 +221,41 @@ $(function() {
   contact form
 
   ***************************/
-  $("#form").submit(function() {
-    $.ajax({
-      type: "POST",
-      url: "mail.php",
-      data: $(this).serialize()
-    }).done(function() {
-      $('.sb-success-result').addClass('sb-active');
-    });
-    return false;
-  });
+// $("#form").submit(function(event) {
+//   event.preventDefault(); // Prevent the default form submission
+
+//   sendEmail(); // Call the sendEmail function to send the email
+// });
+
+// function sendEmail() {
+//   var name = document.getElementById('name').value;
+//   var phone = document.getElementById('phone').value;
+//   var date = document.getElementById('date').value;
+//   var person = document.getElementById('person').value;
+
+//   var messageBody = "Name: " + name + "<br/> Phone: " + phone + "<br/> Time & Date: " + date + "<br/> No Of Person: " + person;
+
+//   Email.send({
+//     Host: "smtp.elasticemail.com",
+//     Username: "siddiqueofl@gmail.com",
+//     Password: "DE774B1BE74137B688B44DFB518B6DF9A936",
+//     To: 'siddiqueofl@gmail.com',
+//     From: "siddiqueofl@gmail.com",
+//     Subject: "SunnySideCafe | New Reservation",
+//     Body: messageBody
+//   }).then(
+//     message => {
+//       alert(message);
+//       $('.sb-success-result').addClass('sb-active'); // Show success message
+//     }
+//   ).catch(
+//     error => {
+//       console.error('Email sending failed:', error);
+//       alert('Failed to send email.');
+//     }
+//   );
+// }
+
   /***************************
 
   sliders
