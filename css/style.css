@@ -527,7 +527,8 @@ badge
   z-index: 2;
   top: 15px;
   left: 15px;
-  background-color: var(--orange);
+  background-color: orangered;
+  color: white;
   padding: 3px 10px;
   font-size: 14px;
   display: flex;
@@ -536,7 +537,8 @@ badge
     font-size: 11px;
     margin-right: 5px; }
   .sb-badge.sb-vegan {
-    background-color: #9CCC65; }
+    background-color: rgb(62, 230, 62); 
+  color: black;}
   .sb-badge.sb-hot {
     background-color: #FF5252; }
 
@@ -1618,22 +1620,22 @@ menu
     justify-content: space-between;
     align-items: center; }
     .sb-menu-item .sb-card-tp .sb-card-title {
-      width: calc(100% - 90px);
+      /* width: calc(100% - 90px); */
       overflow: hidden;
       text-overflow: ellipsis;
       display: -moz-box;
       -moz-box-orient: vertical;
-      display: -webkit-box;
+      /* display: -webkit-box; */
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       line-clamp: 1;
       box-orient: vertical; }
     .sb-menu-item .sb-card-tp .sb-price {
-      width: 60px;
+      width: 75px;
       height: 60px;
       font-weight: 500;
       background-color: var(--orange);
-      font-size: 24px;
+      font-size: 22px;
       display: flex;
       justify-content: center;
       align-items: center; }
@@ -3937,4 +3939,19 @@ illustration 9
   }
   
 
+#menu-span{
+  color: black;
+  font-weight: 500;
+}
 
+
+.sb-card-tp,
+.sb-description {
+  flex: 1 1 auto; /* Text sections take remaining space */
+}
+
+
+#halal-div img{
+  height: auto;
+  width: 65px;
+}
