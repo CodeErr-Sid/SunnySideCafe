@@ -3955,3 +3955,30 @@ illustration 9
   height: auto;
   width: 65px;
 }
+
+/* 3 price */
+.sid-table {
+  margin-top: -28px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.sid-heading {
+  background-color: var(--orange);
+  padding: 4px;
+  font-size: 15px;
+  font-weight: bolder;
+  border: 1px solid #ddd;
+}
+
+.sid-number {
+  padding: 4px;
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid #ddd;
+}
+
+.sid-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
