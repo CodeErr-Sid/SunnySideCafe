@@ -3982,3 +3982,31 @@ illustration 9
 .sid-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+/*  */
+
+.sid-table2 {
+  margin-top: -28px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.sid-heading2 {
+  background-color: whitesmoke;
+  padding: 4px;
+  font-size: 15px;
+  font-weight: bolder;
+  border: 1px solid #ddd;
+}
+
+.sid-number2 {
+  background-color: var(--orange);
+  padding: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid #ddd;
+}
+
+.sid-table2 tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
