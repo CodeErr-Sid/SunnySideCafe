@@ -2571,7 +2571,22 @@
   <!-- starbelly js -->
   <script src="js/main.js"></script>
 
+<script>
+  // Function to check if the page is loaded and needs to be refreshed
+function forceRefreshOnFirstVisit() {
+    // Check if the page has been visited before
+    if (!sessionStorage.getItem('visitedMenuPage')) {
+        // Mark the page as visited
+        sessionStorage.setItem('visitedMenuPage', 'true');
+        // Force a reload to ensure proper initialization
+        location.reload();
+    }
+}
 
+// Run the function when the page loads
+window.addEventListener('load', forceRefreshOnFirstVisit);
+
+</script>
   
 
 
