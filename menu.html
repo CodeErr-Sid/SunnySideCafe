@@ -217,6 +217,22 @@
             <a href="#." data-filter=".kids_others" class="sb-filter-link">Kids & others</a>
             <a href="#." data-filter=".drinks" class="sb-filter-link">Drinks & Shakes</a>
           </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+    const link = document.getElementById('breakfast-link');
+
+    link.addEventListener('click', () => {
+        // Remove 'active' class from all links (if needed)
+        const allLinks = document.querySelectorAll('.sb-filter-link');
+        allLinks.forEach(el => el.classList.remove('active'));
+
+        // Add 'active' class to the clicked link
+        link.classList.add('active');
+    });
+});
+
+          </script>
           <!-- filter end -->
           <div class="sb-masonry-grid">
             <div class="sb-grid-sizer"></div>
@@ -2571,53 +2587,46 @@
   <!-- starbelly js -->
   <script src="js/main.js"></script>
 
-<script>
-// Function to initialize the menu
-function initializeMenu() {
-    // Hide all filterable items
-    const allItems = document.querySelectorAll('.sb-filter-link');
-    allItems.forEach(item => {
+  <!-- menu fix -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Hide all filterable items
+      const allItems = document.querySelectorAll('.sb-filter-link');
+      allItems.forEach(item => {
         const filterClass = item.getAttribute('data-filter');
         const elementsToHide = document.querySelectorAll(filterClass);
         elementsToHide.forEach(element => element.style.display = 'none');
+      });
+  
+      // Show only breakfast items initially
+      const breakfastItems = document.querySelectorAll('.breakfast');
+      breakfastItems.forEach(item => item.style.display = 'block');
+  
+      // Add event listener to each filter link
+      document.querySelectorAll('.sb-filter-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+  
+          // Remove active class from all links
+          allItems.forEach(link => link.classList.remove('sb-active'));
+  
+          // Add active class to the clicked link
+          this.classList.add('sb-active');
+  
+          // Hide all items
+          allItems.forEach(item => {
+            const filterClass = item.getAttribute('data-filter');
+            const elementsToHide = document.querySelectorAll(filterClass);
+            elementsToHide.forEach(element => element.style.display = 'none');
+          });
+  
+          // Show the selected filter items
+          const selectedItems = document.querySelectorAll(this.getAttribute('data-filter'));
+          selectedItems.forEach(item => item.style.display = 'block');
+        });
+      });
     });
-
-    // Show only breakfast items initially
-    const breakfastItems = document.querySelectorAll('.breakfast');
-    breakfastItems.forEach(item => item.style.display = 'block');
-}
-
-// Function to force a reload on first visit from navbar
-function handleNavLinkClick(event) {
-    event.preventDefault();
-    const targetUrl = event.currentTarget.href;
-    sessionStorage.setItem('forceReload', 'true');
-    window.location.href = targetUrl;
-}
-
-// Function to check if a reload is needed
-function checkForReload() {
-    if (sessionStorage.getItem('forceReload')) {
-        sessionStorage.removeItem('forceReload');
-        location.reload();
-    } else {
-        initializeMenu();
-    }
-}
-
-// Attach event listeners to navbar links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', handleNavLinkClick);
-});
-
-// Check for reload or initialize menu on page load
-window.addEventListener('load', checkForReload);
-
-</script>
-  
-
-
-  
+  </script>
   
 
 </body>

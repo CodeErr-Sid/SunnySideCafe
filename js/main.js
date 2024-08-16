@@ -65,28 +65,28 @@ $(function() {
   isotope
 
   ***************************/
-  $('.sb-filter a').on('click', function() {
-    $('.sb-filter .sb-active').removeClass('sb-active');
-    $(this).addClass('sb-active');
+  // $('.sb-filter a').on('click', function() {
+  //   $('.sb-filter .sb-active').removeClass('sb-active');
+  //   $(this).addClass('sb-active');
 
-    var selector = $(this).data('filter');
-    $('.sb-masonry-grid').isotope({
-      filter: selector
-    });
-    return false;
-  });
-  $(document).ready(function() {
-    $('.sb-masonry-grid').isotope({
-      itemSelector: '.sb-grid-item',
-      percentPosition: true,
-      masonry: {
-        columnWidth: '.sb-grid-sizer'
-      }
-    });
-  });
-  $('.sb-tabs').isotope({
-    filter: '.sb-ingredients-tab'
-  });
+  //   var selector = $(this).data('filter');
+  //   $('.sb-masonry-grid').isotope({
+  //     filter: selector
+  //   });
+  //   return false;
+  // });
+  // $(document).ready(function() {
+  //   $('.sb-masonry-grid').isotope({
+  //     itemSelector: '.sb-grid-item',
+  //     percentPosition: true,
+  //     masonry: {
+  //       columnWidth: '.sb-grid-sizer'
+  //     }
+  //   });
+  // });
+  // $('.sb-tabs').isotope({
+  //   filter: '.sb-ingredients-tab'
+  // });
   /***************************
 
   fancybox
@@ -708,50 +708,4 @@ $(function() {
 
 
 
-function initializeMenu() {
-  // Hide all filterable items
-  const allItems = document.querySelectorAll('.sb-filter-link');
-  allItems.forEach(item => {
-      const filterClass = item.getAttribute('data-filter');
-      const elementsToHide = document.querySelectorAll(filterClass);
-      elementsToHide.forEach(element => element.style.display = 'none');
-  });
 
-  // Show only breakfast items initially
-  const breakfastItems = document.querySelectorAll('.breakfast');
-  breakfastItems.forEach(item => item.style.display = 'block');
-
-  // Add event listener to each filter link
-  document.querySelectorAll('.sb-filter-link').forEach(link => {
-      link.addEventListener('click', function(event) {
-          event.preventDefault();
-
-          // Remove active class from all links
-          allItems.forEach(link => link.classList.remove('sb-active'));
-
-          // Add active class to the clicked link
-          this.classList.add('sb-active');
-
-          // Hide all items
-          allItems.forEach(item => {
-              const filterClass = item.getAttribute('data-filter');
-              const elementsToHide = document.querySelectorAll(filterClass);
-              elementsToHide.forEach(element => element.style.display = 'none');
-          });
-
-          // Show the selected filter items
-          const selectedItems = document.querySelectorAll(this.getAttribute('data-filter'));
-          selectedItems.forEach(item => item.style.display = 'block');
-      });
-  });
-}
-
-// Reinitialize the menu on page load and on navigation events
-window.addEventListener('load', initializeMenu);
-window.addEventListener('popstate', initializeMenu);  // Handle back/forward navigation
-
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', function() {
-      setTimeout(initializeMenu, 100);  // Reinitialize after navigating to the page
-  });
-});
