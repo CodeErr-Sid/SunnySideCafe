@@ -2572,18 +2572,36 @@
   <script src="js/main.js"></script>
 
 <script>
-  // Function to check if the page is loaded and needs to be refreshed
+function initializeMenu() {
+    // Hide all filterable items
+    const allItems = document.querySelectorAll('.sb-filter-link');
+    allItems.forEach(item => {
+        const filterClass = item.getAttribute('data-filter');
+        const elementsToHide = document.querySelectorAll(filterClass);
+        elementsToHide.forEach(element => element.style.display = 'none');
+    });
+
+    // Show only breakfast items initially
+    const breakfastItems = document.querySelectorAll('.breakfast');
+    breakfastItems.forEach(item => item.style.display = 'block');
+}
+
 function forceRefreshOnFirstVisit() {
-    // Check if the page has been visited before
-    if (!sessionStorage.getItem('visitedMenuPage')) {
-        // Mark the page as visited
-        sessionStorage.setItem('visitedMenuPage', 'true');
-        // Force a reload to ensure proper initialization
-        location.reload();
+    // Check if a query parameter is present
+    const urlParams = new URLSearchParams(window.location.search);
+    const refreshParam = urlParams.get('refresh');
+
+    // If no refresh parameter, add it and reload the page
+    if (!refreshParam) {
+        urlParams.set('refresh', 'true');
+        window.location.search = urlParams.toString();
+    } else {
+        // Initialize the menu after the refresh
+        initializeMenu();
     }
 }
 
-// Run the function when the page loads
+// Run the function on page load
 window.addEventListener('load', forceRefreshOnFirstVisit);
 
 </script>
