@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
   }
 
   if (req.method === 'POST') {
-    const { name, phone, date, person } = req.body;
+    const { name, email, text } = req.body;
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -24,8 +24,8 @@ module.exports = async (req, res) => {
     const mailOptions = {
       from: 'siddiquetestemail@gmail.com',
       to: 'primesiteinnovation@gmail.com',
-      subject: 'SunnySideCafe | Reservation Request',
-      text: `Name: ${name}\nPhone: ${phone}\nDate: ${date}\nNumber of persons: ${person}`,
+      subject: 'SunnySideCafe | Contact Form Submission',
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
     };
 
     try {

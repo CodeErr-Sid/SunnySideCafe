@@ -60,7 +60,7 @@
           </a>
           <!-- menu -->
           <div class="sb-right-side">
-            <nav id="sb-dynamic-menu" class="sb-menu-transition">
+            <nav >
               <ul class="sb-navigation">
                 <li class=" ">
                   <a href="index.html">Home</a>
@@ -263,8 +263,6 @@
             <div class="col-lg-5">
               <div class="sb-contact-form-frame">
                 <div class="sb-illustration-9">
-                  <!-- <img src="img/illustrations/envelope-1.png" alt="envelope" class="sb-envelope-1"> -->
-                  <!-- <img src="img/illustrations/envelope-2.png" alt="envelope" class="sb-envelope-2"> -->
                   <div class="sb-cirkle-1"></div>
                   <div class="sb-cirkle-2"></div>
                   <div class="sb-cirkle-3"></div>
@@ -272,7 +270,8 @@
                 <div class="sb-form-content">
                   <div class="sb-main-content">
                     <h3 class="sb-mb-30">Send Message</h3>
-                    <form id="form">
+
+                    <form id="form" action="/api/sendEmail.js" method="POST">
                       <div class="sb-group-input">
                         <input type="text" name="name" required>
                         <span class="sb-bar"></span>
@@ -298,6 +297,7 @@
                       </button>
                       <!-- button end -->
                     </form>
+
                   </div>
                   <div class="sb-success-result">
                     <img src="img/ui/success.jpg" alt="success" class="sb-mb-15">
@@ -371,7 +371,7 @@
       <footer>
         <div class="container">
           <div class="sb-footer-frame">
-            <a href="home-1.html" class="sb-logo-frame">
+            <a href="index.html" class="sb-logo-frame">
               <!-- logo img -->
               <img src="imgs/logo/logo.png" alt="Starbelly">
             </a>
@@ -417,5 +417,4 @@
 </body>
 
 
-<!-- Mirrored from miller.bslthemes.com/starbelly-demo/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 07:16:50 GMT -->
 </html>

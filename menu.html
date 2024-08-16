@@ -60,7 +60,7 @@
           </a>
           <!-- menu -->
           <div class="sb-right-side">
-            <nav id="sb-dynamic-menu" class="sb-menu-transition">
+            <nav >
               <ul class="sb-navigation">
                 <li class=" ">
                   <a href="index.html">Home</a>
@@ -2528,7 +2528,7 @@
       <footer>
         <div class="container">
           <div class="sb-footer-frame">
-            <a href="home-1.html" class="sb-logo-frame">
+            <a href="index.html" class="sb-logo-frame">
               <!-- logo img -->
               <img src="imgs/logo/logo.png" alt="Starbelly">
             </a>
@@ -2611,6 +2611,31 @@
       });
     });
   </script>
+<!-- direct menu access -->
+<script>
+document.addEventListener('swup:contentReplaced', function() {
+    triggerFilter();
+});
+
+window.addEventListener('load', function() {
+    triggerFilter();
+});
+
+function triggerFilter() {
+    var hash = window.location.hash.substring(1); // Get the hash from the URL (e.g., "breakfast")
+    
+    if (hash) {
+        setTimeout(function() {
+            var filterLink = document.querySelector('.sb-filter-link[data-filter=".' + hash + '"]');
+            
+            if (filterLink) {
+                filterLink.click(); // Trigger the click event to activate the filter
+            }
+        }, 100); // Delay the click event by 100 milliseconds
+    }
+}
+
+</script>
   
 
 </body>
