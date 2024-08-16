@@ -2572,7 +2572,7 @@
   <script src="js/main.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    function initializeMenu() {
       // Hide all filterable items
       const allItems = document.querySelectorAll('.sb-filter-link');
       allItems.forEach(item => {
@@ -2608,8 +2608,17 @@
           selectedItems.forEach(item => item.style.display = 'block');
         });
       });
-    });
+    }
+  
+    // Initialize the menu on page load
+    document.addEventListener("DOMContentLoaded", initializeMenu);
+  
+    // Call initializeMenu when navigating to this page via a link
+    if (typeof initializeMenu === "function") {
+      initializeMenu();
+    }
   </script>
+  
 
 
   
