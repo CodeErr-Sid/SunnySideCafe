@@ -16,14 +16,14 @@ module.exports = async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'siddiquetestemail@gmail.com',
-        pass: 'kdox juvy mjln unxt',
+        user: 'primesite.mailer@gmail.com',
+        pass: 'coru rxlx yzaw hhvc',
       },
     });
 
     const mailOptions = {
-      from: 'siddiquetestemail@gmail.com',
-      to: 'siddiquemohammed732@gmail.com',
+      from: 'primesite.mailer@gmail.com',
+      to: 'primesiteinnovation@gmail.com',
       subject: 'SunnySideCafe | Contact Form Submission',
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
     };
