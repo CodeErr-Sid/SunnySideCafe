@@ -209,7 +209,7 @@
           <!-- filter -->
           <div class="sb-filter mb-30">
             
-            <a href="#." data-filter=".breakfast" class="sb-filter-link sb-active">Breakfast</a>
+            <a href="#." data-filter=".breakfast" class="sb-filter-link ">Breakfast</a>
             <a href="#." data-filter=".meals" class="sb-filter-link">Meals</a>
             <a href="#." data-filter=".dailyspecial" class="sb-filter-link ">Daily Special</a>
             <a href="#." data-filter=".burgers_toasties" class="sb-filter-link">Burgers & Toasties</a>
@@ -217,22 +217,6 @@
             <a href="#." data-filter=".kids_others" class="sb-filter-link">Kids & others</a>
             <a href="#." data-filter=".drinks" class="sb-filter-link">Drinks & Shakes</a>
           </div>
-
-          <script>
-            document.addEventListener('DOMContentLoaded', () => {
-    const link = document.getElementById('breakfast-link');
-
-    link.addEventListener('click', () => {
-        // Remove 'active' class from all links (if needed)
-        const allLinks = document.querySelectorAll('.sb-filter-link');
-        allLinks.forEach(el => el.classList.remove('active'));
-
-        // Add 'active' class to the clicked link
-        link.classList.add('active');
-    });
-});
-
-          </script>
           <!-- filter end -->
           <div class="sb-masonry-grid">
             <div class="sb-grid-sizer"></div>
