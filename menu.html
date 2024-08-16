@@ -2293,7 +2293,7 @@
                     Milk Shakes</div>
                 </div>
                 <div class="sb-card-tp">
-                  <h4 class="sb-card-title">CStrawberry</h4>
+                  <h4 class="sb-card-title">Strawberry</h4>
                   <div class="sb-price"sub>£</sub> 4.60</div>                
                 </div>
               </a>
@@ -2571,8 +2571,50 @@
   <!-- starbelly js -->
   <script src="js/main.js"></script>
 
+  <!-- menu fix -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Hide all filterable items
+      const allItems = document.querySelectorAll('.sb-filter-link');
+      allItems.forEach(item => {
+        const filterClass = item.getAttribute('data-filter');
+        const elementsToHide = document.querySelectorAll(filterClass);
+        elementsToHide.forEach(element => element.style.display = 'none');
+      });
+  
+      // Show only breakfast items initially
+      const breakfastItems = document.querySelectorAll('.breakfast');
+      breakfastItems.forEach(item => item.style.display = 'block');
+  
+      // Add event listener to each filter link
+      document.querySelectorAll('.sb-filter-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+  
+          // Remove active class from all links
+          allItems.forEach(link => link.classList.remove('sb-active'));
+  
+          // Add active class to the clicked link
+          this.classList.add('sb-active');
+  
+          // Hide all items
+          allItems.forEach(item => {
+            const filterClass = item.getAttribute('data-filter');
+            const elementsToHide = document.querySelectorAll(filterClass);
+            elementsToHide.forEach(element => element.style.display = 'none');
+          });
+  
+          // Show the selected filter items
+          const selectedItems = document.querySelectorAll(this.getAttribute('data-filter'));
+          selectedItems.forEach(item => item.style.display = 'block');
+        });
+      });
+    });
+  </script>
+  
+
 </body>
 
 
-<!-- Mirrored from miller.bslthemes.com/starbelly-demo/menu-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 07:16:49 GMT -->
+
 </html>
