@@ -65,28 +65,28 @@ $(function() {
   isotope
 
   ***************************/
-  // $('.sb-filter a').on('click', function() {
-  //   $('.sb-filter .sb-active').removeClass('sb-active');
-  //   $(this).addClass('sb-active');
+  $('.sb-filter a').on('click', function() {
+    $('.sb-filter .sb-active').removeClass('sb-active');
+    $(this).addClass('sb-active');
 
-  //   var selector = $(this).data('filter');
-  //   $('.sb-masonry-grid').isotope({
-  //     filter: selector
-  //   });
-  //   return false;
-  // });
-  // $(document).ready(function() {
-  //   $('.sb-masonry-grid').isotope({
-  //     itemSelector: '.sb-grid-item',
-  //     percentPosition: true,
-  //     masonry: {
-  //       columnWidth: '.sb-grid-sizer'
-  //     }
-  //   });
-  // });
-  // $('.sb-tabs').isotope({
-  //   filter: '.sb-ingredients-tab'
-  // });
+    var selector = $(this).data('filter');
+    $('.sb-masonry-grid').isotope({
+      filter: selector
+    });
+    return false;
+  });
+  $(document).ready(function() {
+    $('.sb-masonry-grid').isotope({
+      itemSelector: '.sb-grid-item',
+      percentPosition: true,
+      masonry: {
+        columnWidth: '.sb-grid-sizer'
+      }
+    });
+  });
+  $('.sb-tabs').isotope({
+    filter: '.sb-ingredients-tab'
+  });
   /***************************
 
   fancybox
