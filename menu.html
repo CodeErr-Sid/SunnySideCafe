@@ -2572,6 +2572,7 @@
   <script src="js/main.js"></script>
 
 <script>
+// Function to initialize the menu
 function initializeMenu() {
     // Hide all filterable items
     const allItems = document.querySelectorAll('.sb-filter-link');
@@ -2586,23 +2587,31 @@ function initializeMenu() {
     breakfastItems.forEach(item => item.style.display = 'block');
 }
 
-function forceRefreshOnFirstVisit() {
-    // Check if a query parameter is present
-    const urlParams = new URLSearchParams(window.location.search);
-    const refreshParam = urlParams.get('refresh');
+// Function to force a reload on first visit from navbar
+function handleNavLinkClick(event) {
+    event.preventDefault();
+    const targetUrl = event.currentTarget.href;
+    sessionStorage.setItem('forceReload', 'true');
+    window.location.href = targetUrl;
+}
 
-    // If no refresh parameter, add it and reload the page
-    if (!refreshParam) {
-        urlParams.set('refresh', 'true');
-        window.location.search = urlParams.toString();
+// Function to check if a reload is needed
+function checkForReload() {
+    if (sessionStorage.getItem('forceReload')) {
+        sessionStorage.removeItem('forceReload');
+        location.reload();
     } else {
-        // Initialize the menu after the refresh
         initializeMenu();
     }
 }
 
-// Run the function on page load
-window.addEventListener('load', forceRefreshOnFirstVisit);
+// Attach event listeners to navbar links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', handleNavLinkClick);
+});
+
+// Check for reload or initialize menu on page load
+window.addEventListener('load', checkForReload);
 
 </script>
   
