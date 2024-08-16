@@ -708,48 +708,50 @@ $(function() {
 
 
 
-
-  function initializeMenu() {
-    // Hide all filterable items
-    const allItems = document.querySelectorAll('.sb-filter-link');
-    allItems.forEach(item => {
+function initializeMenu() {
+  // Hide all filterable items
+  const allItems = document.querySelectorAll('.sb-filter-link');
+  allItems.forEach(item => {
       const filterClass = item.getAttribute('data-filter');
       const elementsToHide = document.querySelectorAll(filterClass);
       elementsToHide.forEach(element => element.style.display = 'none');
-    });
+  });
 
-    // Show only breakfast items initially
-    const breakfastItems = document.querySelectorAll('.breakfast');
-    breakfastItems.forEach(item => item.style.display = 'block');
+  // Show only breakfast items initially
+  const breakfastItems = document.querySelectorAll('.breakfast');
+  breakfastItems.forEach(item => item.style.display = 'block');
 
-    // Add event listener to each filter link
-    document.querySelectorAll('.sb-filter-link').forEach(link => {
+  // Add event listener to each filter link
+  document.querySelectorAll('.sb-filter-link').forEach(link => {
       link.addEventListener('click', function(event) {
-        event.preventDefault();
+          event.preventDefault();
 
-        // Remove active class from all links
-        allItems.forEach(link => link.classList.remove('sb-active'));
+          // Remove active class from all links
+          allItems.forEach(link => link.classList.remove('sb-active'));
 
-        // Add active class to the clicked link
-        this.classList.add('sb-active');
+          // Add active class to the clicked link
+          this.classList.add('sb-active');
 
-        // Hide all items
-        allItems.forEach(item => {
-          const filterClass = item.getAttribute('data-filter');
-          const elementsToHide = document.querySelectorAll(filterClass);
-          elementsToHide.forEach(element => element.style.display = 'none');
-        });
+          // Hide all items
+          allItems.forEach(item => {
+              const filterClass = item.getAttribute('data-filter');
+              const elementsToHide = document.querySelectorAll(filterClass);
+              elementsToHide.forEach(element => element.style.display = 'none');
+          });
 
-        // Show the selected filter items
-        const selectedItems = document.querySelectorAll(this.getAttribute('data-filter'));
-        selectedItems.forEach(item => item.style.display = 'block');
+          // Show the selected filter items
+          const selectedItems = document.querySelectorAll(this.getAttribute('data-filter'));
+          selectedItems.forEach(item => item.style.display = 'block');
       });
-    });
-  }
+  });
+}
 
-  // Initialize the menu on full page load
-  window.onload = function() {
-    initializeMenu();
-  };
+// Reinitialize the menu on page load and on navigation events
+window.addEventListener('load', initializeMenu);
+window.addEventListener('popstate', initializeMenu);  // Handle back/forward navigation
 
-
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+      setTimeout(initializeMenu, 100);  // Reinitialize after navigating to the page
+  });
+});
