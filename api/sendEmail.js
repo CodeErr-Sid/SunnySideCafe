@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config(); // Load environment variables from .env file
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,14 +17,14 @@ module.exports = async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'primesite.mailer@gmail.com',
-        pass: 'coru rxlx yzaw hhvc',
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: 'primesite.mailer@gmail.com',
-      to: 'primesiteinnovation@gmail.com',
+      from: process.env.GMAIL_USER,
+      to: 'primesite.mailer@gmail.com',
       subject: 'SunnySideCafe | Contact Form Submission',
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
     };
