@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
 
     const mailOptions = {
       from: 'siddiquetestemail@gmail.com',
-      to: 'primesiteinnovation@gmail.com',
+      to: 'siddiquemohammed732@gmail.com',
       subject: 'SunnySideCafe | Contact Form Submission',
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
     };

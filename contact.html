@@ -414,6 +414,40 @@
   <!-- starbelly js -->
   <script src="js/main.js"></script>
 
+
+    <script>
+  document.getElementById('form').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(this);
+
+    try {
+      const response = await fetch(this.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          text: formData.get('text'),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Email sent successfully!'); // Success message
+      } else {
+        alert('Error sending email: ' + result.error); // Error message
+      }
+    } catch (error) {
+      alert('Error sending email: ' + error.message); // Handle network or other errors
+    }
+  });
+</script>
+
+
 </body>
 
 
