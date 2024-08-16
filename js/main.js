@@ -54,12 +54,12 @@ $(function() {
   swup
 
   ***************************/
-  const options = {
-    containers: ['#sb-dynamic-content', '#sb-dynamic-menu'],
-    animateHistoryBrowsing: true,
-    linkSelector: '.sb-navigation a:not([data-no-swup]) , a:not([data-no-swup])',
-  };
-  const swup = new Swup(options);
+  // const options = {
+  //   containers: ['#sb-dynamic-content', '#sb-dynamic-menu'],
+  //   animateHistoryBrowsing: true,
+  //   linkSelector: '.sb-navigation a:not([data-no-swup]) , a:not([data-no-swup])',
+  // };
+  // const swup = new Swup(options);
   /***************************
 
   isotope
