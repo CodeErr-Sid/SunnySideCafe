@@ -19,8 +19,8 @@ module.exports = async (req, res) => {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'primesite.mailer@gmail.com',
-          pass: 'coru rxlx yzaw hhvc', // Use your correct App Password here
+          user: 'siddiquetestemail@gmail.com',
+          pass: 'kdox juvy mjln unxt', // Use your correct App Password here
         },
       });
 
@@ -35,14 +35,14 @@ module.exports = async (req, res) => {
 
       // Define the email options
       const mailOptions = {
-        from: 'primesite.mailer@gmail.com',
+        from: 'siddiquetestemail@gmail.com',
         to: 'siddiqueofl@gmail.com',
         subject: 'SunnySideCafe | Contact Form Submission',
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
             <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; overflow: hidden;">
               <!-- Header with logo and background -->
-              <div style="background-image: url('https://your-public-url.com/bg_img.png'); background-size: cover; padding: 20px; text-align: center; color: white;">
+              <div style="background-image: url('https://sunnysidecafe.vercel.app/imgs/logo/logo.png'); background-size: cover; padding: 20px; text-align: center; color: white;">
                 <img src="https://sunnysidecafe.vercel.app/imgs/logo/logo.png" alt="SunnySideCafe" style="max-width: 150px; margin-bottom: 20px;">
                 <h1 style="margin: 0;">New Contact Form Submission</h1>
               </div>
