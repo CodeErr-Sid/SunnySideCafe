@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
 
       const mailOptions = {
         from: 'primesite.mailer@gmail.com',
-        to: 'primesite.mailer@gmail.com',
+        to: 'siddiqueofl@gmail.com',
         subject: 'SunnySideCafe | Contact Form Submission',
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
