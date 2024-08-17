@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-const path = require('path');
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,7 +19,7 @@ module.exports = async (req, res) => {
         service: 'gmail',
         auth: {
           user: 'siddiquetestemail@gmail.com',
-          pass: 'kdox juvy mjln unxt', // Use your correct App Password here
+          pass: 'kdox juvy mjln unxt', // Ensure this is your correct App Password
         },
       });
 
