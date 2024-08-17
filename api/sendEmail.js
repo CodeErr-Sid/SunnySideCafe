@@ -15,14 +15,25 @@ module.exports = async (req, res) => {
     try {
       const { name, email, text } = req.body;
 
+      // Configure the transporter
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
           user: 'primesite.mailer@gmail.com',
-          pass: 'coru rxlx yzaw hhvc',
+          pass: 'coru rxlx yzaw hhvc', // Use your correct App Password here
         },
       });
 
+      // Verify the transporter configuration
+      transporter.verify((error, success) => {
+        if (error) {
+          console.error('Error with transporter configuration:', error);
+        } else {
+          console.log('Transporter is ready to send emails:', success);
+        }
+      });
+
+      // Define the email options
       const mailOptions = {
         from: 'primesite.mailer@gmail.com',
         to: 'siddiqueofl@gmail.com',
@@ -31,8 +42,8 @@ module.exports = async (req, res) => {
           <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
             <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; overflow: hidden;">
               <!-- Header with logo and background -->
-              <div style="background-image: url('api/email_assets/bg_img.png'); background-size: cover; padding: 20px; text-align: center; color: white;">
-                <img src="api/email_assets/logo.png" alt="SunnySideCafe" style="max-width: 150px; margin-bottom: 20px;">
+              <div style="background-image: url('https://your-public-url.com/bg_img.png'); background-size: cover; padding: 20px; text-align: center; color: white;">
+                <img src="https://sunnysidecafe.vercel.app/imgs/logo/logo.png" alt="SunnySideCafe" style="max-width: 150px; margin-bottom: 20px;">
                 <h1 style="margin: 0;">New Contact Form Submission</h1>
               </div>
 
@@ -53,7 +64,9 @@ module.exports = async (req, res) => {
         `,
       };
 
+      // Send the email
       await transporter.sendMail(mailOptions);
+
       res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
       console.error('Error sending email:', error.message);
