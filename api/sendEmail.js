@@ -17,14 +17,14 @@ export default async (req, res) => {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'siddiquetestemail@gmail.com',
-          pass: 'kdox juvy mjln unxt',
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASS,
         },
       });
 
       const mailOptions = {
-        from: 'siddiquetestemail@gmail.com',
-        to: 'siddiquetestemail@gmail.com',
+        from: process.env.GMAIL_USER,
+        to: 'siddiqueofl@gmail.com',
         subject: 'SunnySideCafe | Contact Form Submission',
         html: `
           <!DOCTYPE html>
