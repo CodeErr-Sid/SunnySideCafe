@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -17,18 +17,19 @@ module.exports = async (req, res) => {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: process.env.GMAIL_USER,
-          pass: process.env.GMAIL_PASS,
+          user: 'siddiquetestemail@gmail.com',
+          pass: 'kdox juvy mjln unxt',
         },
       });
 
       const mailOptions = {
-        from: process.env.GMAIL_USER,
-        to: process.env.GMAIL_USER,
+        from: 'siddiquetestemail@gmail.com',
+        to: 'siddiquetestemail@gmail.com',
         subject: 'SunnySideCafe | Contact Form Submission',
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
       };
 
+      // Send the email
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
