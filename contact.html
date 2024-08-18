@@ -439,6 +439,7 @@ document.getElementById('form').addEventListener('submit', async function (e) {
 
     if (response.ok) {
       alert('Email sent successfully!'); // Success message
+      this.reset(); // Clear the form fields
     } else {
       alert('Error sending email: ' + (result.error || 'Unknown error')); // Error message
     }
