@@ -36,31 +36,38 @@ export default async (req, res) => {
               body {
                 margin: 0;
                 padding: 0;
+                font-family: Arial, sans-serif;
+                font-size: 16px; /* Increase base font size */
               }
               .email-container {
                 width: 100%;
                 height: 100vh;
-                background: url('https://sunnysidecafe.vercel.app/imgs/logo/logo.png') no-repeat center center;
+                background: url('https://sunnysidecafe.vercel.app/imgs/logo/email_bg.png') no-repeat center center;
                 background-size: cover;
                 text-align: center;
                 padding: 20px;
               }
               .logo {
                 margin: 20px auto;
+                max-width: 150px; /* Adjust logo size */
               }
               .content {
                 background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
                 border-radius: 8px;
-                padding: 20px;
+                padding: 30px; /* Increase padding */
                 max-width: 600px;
                 margin: 0 auto;
                 text-align: left;
+                font-size: 18px; /* Increase font size in content */
               }
               h1 {
                 color: #333;
+                font-size: 24px; /* Increase header font size */
+                margin-bottom: 20px; /* Add margin below header */
               }
               p {
                 color: #555;
+                margin-bottom: 10px; /* Add margin below paragraphs */
               }
             </style>
           </head>
