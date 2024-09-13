@@ -2215,27 +2215,20 @@ filter
 .sb-filter {
   margin-bottom: 60px; }
   .sb-filter .sb-filter-link {
-    padding: 0 20px;
+    padding: 0px 13px;
     font-weight: 500;
-    line-height: 55px;
+    line-height: 45px;
     cursor: pointer;
     position: relative;
     display: inline-block;
     text-align: center;
-    height: 55px;
+    height: 45px;
     font-size: 14px;
     margin-right: 10px;
     background-color: #F2F3F5;
     transition: 0.3s ease-in-out;
-    color: #6F6F87; }
-    .sb-filter .sb-filter-link:last-child {
-      margin-right: 0; }
-    .sb-filter .sb-filter-link.sb-active {
-      background-color: var(--orange);
-      color: #231E41; }
-    .sb-filter .sb-filter-link:hover {
-      filter: brightness(102%);
-      color: #231E41; }
+    color: #6F6F87;
+  }
 
 @media (max-width: 768px) {
   .sb-filter {
@@ -2980,7 +2973,7 @@ illustration 1 (2)
     width: 60%; }
   .sb-illustration-1-2 .sb-food-1 {
     top: 18%;
-    left: -5%;
+    left: -12%;
     animation: anima1 3s infinite ease-in-out; }
   .sb-illustration-1-2 .sb-food-2 {
     top: -2%;
