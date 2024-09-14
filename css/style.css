@@ -4004,3 +4004,56 @@ illustration 9
   background-color: #f9f9f9;
 }
 
+/* Uber Eats Icon */
+
+.sid-uber-icon-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 50%;
+}
+
+.sid-uber-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0.9;
+}
+
+.sid-uber-icon-wrapper a {
+  display: inline-block;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.sid-uber-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 0 20px rgba(255, 105, 0, 0.8); /* Modern glowing effect */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 105, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 105, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 105, 0, 0.5);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .sid-uber-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .sid-uber-icon-wrapper {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
